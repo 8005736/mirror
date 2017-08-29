@@ -1,0 +1,6 @@
+{
+    "require": {
+        "johnrivs/wunderlist": "^0.13.2",
+        "fenom/fenom": "^2.11"
+    }
+}
