@@ -1,3 +1,5 @@
+<ul>
 {foreach $name as $value}
-<li>{$value}</li>
+	<li>{$value}</li>
 {/foreach}
+</ul>

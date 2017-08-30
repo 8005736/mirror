@@ -1,14 +1,33 @@
 @black : black;
+html {
+    font-family: 'Roboto', sans-serif;
+    max-width: 1000px;
+    background: @black;
+    margin: 50px auto 0;
+}
 
 * {
     padding: 0;
     margin: 0;
     outline: none;
 }
-html{
-	background: @black;
-}
 
-.clock {
-    display: none;
+.app {
+    &-clock {
+        font-size: 46px;
+        text-align: right;
+        span {
+            display: block;
+            font-size: 24px;
+        }
+    }
+    &-weather {
+        &__big {
+            font-size: 46px;
+            i{
+    			margin-left: 10px;
+            }
+        }
+        &__small {}
+    }
 }
