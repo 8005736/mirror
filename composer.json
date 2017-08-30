@@ -1,6 +1,7 @@
 {
     "require": {
         "johnrivs/wunderlist": "^0.13.2",
-        "fenom/fenom": "^2.11"
+        "fenom/fenom": "^2.11",
+        "cmfcmf/openweathermap-php-api": "^2.2"
     }
 }

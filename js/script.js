@@ -2,6 +2,7 @@ $(document).ready(function() {
     app.clock = document.querySelector('#clock').getContext('2d');
     app.clock_init();
     app.wunderlist_init();
+    app.weather_init();
 });
 var app = {
     clock: "",
@@ -20,6 +21,14 @@ var app = {
         request.then(function(data) {
             var aj = JSON.parse(data);
             $(".app_wunderlist").html(aj.result);
+        });
+    },
+    weather: "",
+    weather_init: function() {
+        var request = ajax("php/openweather.php", "");
+        request.then(function(data) {
+            var aj = JSON.parse(data);
+            $(".app_weather").html(aj.result);
         });
     }
 }

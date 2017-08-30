@@ -1,1 +1,3 @@
-/php/wunderlist
+/php/wunderlist.php
+/php/openweather.php
+vendor/*
