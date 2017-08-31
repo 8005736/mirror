@@ -17,21 +17,26 @@ var app = {
     },
     weather: "",
     weather_init: function() {
-        var request = ajax("php/openweather_big.php", "");
-        request.then(function(data) {
-            var aj = JSON.parse(data);
-            $(".app-weather__big").html(aj.result);
-        });
-        var request = ajax("php/openweather_small.php", "");
-        request.then(function(data) {
-            var aj = JSON.parse(data);
-            $(".app-weather__small").html(aj.result);
-        });
+        setTimeout(function() {
+            var request = ajax("php/openweather_big.php", "");
+            request.then(function(data) {
+                var aj = JSON.parse(data);
+                $(".app-weather__big").html(aj.result);
+            });
+        }, 3000);
+        setTimeout(function() {
+            var request = ajax("php/openweather_small.php", "");
+            request.then(function(data) {
+                var aj = JSON.parse(data);
+                $(".app-weather__small").html(aj.result);
+            });
+        }, 5000);
     }
 }
 /*********************************************
  *********************************************/
-var days = ["Понедельник","Вторник","Среда","Четверг","Пятница","Суббота","Воскресенье"];
+var days = ["Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота", "Воскресенье"];
+
 function ajax(url, data = "") {
     return $.ajax({
         url: url,
@@ -48,13 +53,13 @@ function clock_update() {
     currentMinutes = (currentMinutes < 10 ? "0" : "") + currentMinutes;
     currentSeconds = (currentSeconds < 10 ? "0" : "") + currentSeconds;
     var currentTimeString = currentHours + ":" + currentMinutes + ":" + currentSeconds;
-
     var tempDay = currentTime.getDay();
     var currentDay = currentTime.getDate();
     var currentMonth = currentTime.getMonth();
+    currentMonth++;
     currentMonth = (currentMonth < 10 ? "0" : "") + currentMonth;
     $(".app-clock").html(currentTimeString + "<span>" + currentDay + "." + currentMonth + "</span>" + "<span>" + days[tempDay - 1] + "</span>");
-    setTimeout(function(){
+    setTimeout(function() {
         clock_update();
     }, 1000);
 }
