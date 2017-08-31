@@ -1,5 +1,5 @@
 <?php 
-/** Fenom template 'wunderlist_row.tpl' compiled at 2017-08-30 22:18:35 */
+/** Fenom template 'wunderlist_row.tpl' compiled at 2017-08-31 09:56:44 */
 return new Fenom\Render($fenom, function ($var, $tpl) {
 ?><ul>
 <?php  if(!empty($var["name"]) && (is_array($var["name"]) || $var["name"] instanceof \Traversable)) {
